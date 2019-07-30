@@ -193,17 +193,17 @@ def find_words(comb):
         found = True
 
 
-def get_input(s):
+def get_input(prompt):
     """Get a string from the user. Take parameter s as the prompt for input. Then validates the input, if the
     input is not valid it asks the user for another input until a valid input is entered"""
     global chars
-    a = False
+    valid = False
     # Ask the user for an input, prompt gotten from paramter s
-    i = input(s)
+    i = input(prompt)
     # Convert the string to uppercase
     i = i.upper()
     # Loop until a valid string has been entered
-    while a is False:
+    while valid is False:
         # For every character in the string
         for ch in i:
             # If the character is not in the valid character set list
@@ -211,10 +211,10 @@ def get_input(s):
                 # Print an error to the user
                 print("That is not a valid input.")
                 # Ask for a new input
-                i = input(s)
+                i = input(prompt)
             else:
                 # When the user has entered a valid string end the loop
-                a = True
+                valid = True
     # Return the input
     return i
 
