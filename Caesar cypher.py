@@ -81,13 +81,15 @@ def crack(string):
         # Sort dic by the number of matches
         matches = sorted(matches, key=itemgetter(0), reverse=True)
         # Print the most likely result which will be the first entry after sorting
-        print("\nThe most likely result is:", matches[0][1], "with", str(matches[0][0]), "words identified. With a key of",
+        print("\nThe most likely result is:", matches[0][1], "with", str(matches[0][0]),
+              "words identified. With a key of",
               str(matches[0][2]) + ".")
         print("Other possible likely results are: ")
         for x in range(1, len(matches)):
             if matches[x][0] != 0:
                 # Print any other strings with matching results
-                print("\n" + matches[x][1], "with", str(matches[x][0]), "words identified. With a key of", str(matches[x][2]) + ".")
+                print("\n" + matches[x][1], "with", str(matches[x][0]), "words identified. With a key of",
+                      str(matches[x][2]) + ".")
             else:
                 # Determine the end of the matching strings
                 not_found = True
